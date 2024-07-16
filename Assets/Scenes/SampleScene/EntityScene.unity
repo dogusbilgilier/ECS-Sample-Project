@@ -169,9 +169,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 5
-  SpawnBulletInterval: 1
+  SpawnBulletInterval: 0
   BulletPrefab: {fileID: 8275139253878616102, guid: d5d3d13fb541a664cb166e2957c1997e,
     type: 3}
+  BulletSpeed: 15
+  BulletLifeTime: 2
+  BulletDamage: 50
 --- !u!1 &1371797931
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +258,59 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371797931}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1447958620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1447958622}
+  - component: {fileID: 1447958621}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1447958621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447958620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a830c6a468abba4ea5d6df6195f7249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyPrefab: {fileID: 5887996253431042613, guid: 5428ab63a209a78439326b59d2e45f62,
+    type: 3}
+  NumOfEnemiesToSpawnPerSecond: 1
+  NumOfEnemiesToSpawnIncrementAmount: 1
+  MaxNumOfEnemiesToSpawnPerSecond: 20
+  EnemySpawnRadius: 5
+  MinDistanceFromPlayer: 5
+  EnemyHealth: 50
+  TimeBeforeNextSpawn: 1
+--- !u!4 &1447958622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447958620}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1882941032
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,3 +424,4 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 172677373}
+  - {fileID: 1447958622}
