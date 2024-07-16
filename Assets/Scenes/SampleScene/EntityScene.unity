@@ -292,10 +292,11 @@ MonoBehaviour:
   NumOfEnemiesToSpawnPerSecond: 1
   NumOfEnemiesToSpawnIncrementAmount: 1
   MaxNumOfEnemiesToSpawnPerSecond: 20
+  TimeBeforeNextSpawn: 1
   EnemySpawnRadius: 5
   MinDistanceFromPlayer: 5
-  EnemyHealth: 50
-  TimeBeforeNextSpawn: 1
+  EnemyHealth: 99
+  EnemySpeed: 0
 --- !u!4 &1447958622
 Transform:
   m_ObjectHideFlags: 0
