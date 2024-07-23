@@ -24,7 +24,6 @@ public partial struct PlayerSystem : ISystem
         lastShootTime = (float)SystemAPI.Time.ElapsedTime;
     }
 
-    [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
         _entityManager = state.EntityManager;
@@ -70,7 +69,6 @@ public partial struct PlayerSystem : ISystem
         }
     }
 
-    [BurstCompile]
     private void Move(ref SystemState state)
     {
         LocalTransform playerTransform = _entityManager.GetComponentData<LocalTransform>(_playerEntity);

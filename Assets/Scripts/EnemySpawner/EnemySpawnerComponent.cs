@@ -5,16 +5,15 @@ using UnityEngine;
 public struct EnemySpawnerComponent : IComponentData
 {
     public Entity EnemyPrefab;
+
     public int NumOfEnemiesToSpawnPerSecond;
     public int NumOfEnemiesToSpawnIncrementAmount;
     public int MaxNumOfEnemiesToSpawnPerSecond;
 
+    public float CurrenTimeBeforeNextSpawn;
+    public float TimeBeforeNextSpawn;
     public float EnemySpawnRadius;
     public float MinDistanceFromPlayer;
-
-    public float TimeBeforeNextSpawn;
-    public float CurrenTimeBeforeNextSpawn;
     public float EnemyHealth;
     public float EnemySpeed;
-
 }

@@ -45,7 +45,7 @@ public partial struct BulletSystem : ISystem
                     CollidesWith = (uint)CollisionLayer.Enemy
                 });
 
-                if(hits.Length > 0)
+                if (hits.Length > 0)
                 {
                     for (int i = 0; i < hits.Length; i++)
                     {
@@ -55,13 +55,12 @@ public partial struct BulletSystem : ISystem
                         {
                             EnemyComponent enemyComponent = entityManager.GetComponentData<EnemyComponent>(hitEntity);
                             enemyComponent.CurrentHealt -= bulletComponent.Damage;
+
                             entityManager.SetComponentData(hitEntity, enemyComponent);
+                            entityManager.SetComponentData(entity, bulletComponent);
 
-                            if(enemyComponent.CurrentHealt <= 0)
-                            {
-                                entityManager.DestroyEntity(hitEntity); 
-                            }
-
+                            if (enemyComponent.CurrentHealt <= 0)
+                                entityManager.DestroyEntity(hitEntity);
                         }
                     }
                     entityManager.DestroyEntity(entity);

@@ -168,13 +168,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85ecd220b6392e45a72e67959dead4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 5
-  SpawnBulletInterval: 0
   BulletPrefab: {fileID: 8275139253878616102, guid: d5d3d13fb541a664cb166e2957c1997e,
     type: 3}
-  BulletSpeed: 15
-  BulletLifeTime: 2
-  BulletDamage: 50
+  MoveSpeed: 10
+  SpawnBulletInterval: 0
+  BulletSpeed: 1
+  BulletLifeTime: 20
+  BulletDamage: 100
 --- !u!1 &1371797931
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,10 +293,10 @@ MonoBehaviour:
   NumOfEnemiesToSpawnIncrementAmount: 1
   MaxNumOfEnemiesToSpawnPerSecond: 20
   TimeBeforeNextSpawn: 1
-  EnemySpawnRadius: 5
+  EnemySpawnRadius: 20
   MinDistanceFromPlayer: 5
-  EnemyHealth: 99
-  EnemySpeed: 0
+  EnemyHealth: 50
+  EnemySpeed: 3
 --- !u!4 &1447958622
 Transform:
   m_ObjectHideFlags: 0

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerAuthoring : MonoBehaviour
 {
+    public GameObject BulletPrefab;
     public float MoveSpeed;
     public float SpawnBulletInterval;
-    public GameObject BulletPrefab;
 
     public float BulletSpeed;
-    public float BulletLifeTime; 
+    public float BulletLifeTime;
     public float BulletDamage;
 
 
@@ -18,14 +18,15 @@ public class PlayerAuthoring : MonoBehaviour
         public override void Bake(PlayerAuthoring authoring)
         {
             Entity playerEntity = GetEntity(TransformUsageFlags.Dynamic);
+
             AddComponent(playerEntity, new PlayerComponent()
             {
-                BulletDamage = authoring.BulletDamage,
-                BulletLifetime = authoring.BulletLifeTime,
-                BulletSpeed = authoring.BulletSpeed,
+                BulletPrefab = GetEntity(authoring.BulletPrefab, TransformUsageFlags.Dynamic),
                 MoveSpeed = authoring.MoveSpeed,
                 SpawnBulletInterval = authoring.SpawnBulletInterval,
-                BulletPrefab = GetEntity(authoring.BulletPrefab, TransformUsageFlags.Dynamic)
+                BulletDamage = authoring.BulletDamage,
+                BulletLifetime = authoring.BulletLifeTime,
+                BulletSpeed = authoring.BulletSpeed
             });
 
         }

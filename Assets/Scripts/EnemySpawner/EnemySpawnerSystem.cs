@@ -70,12 +70,13 @@ public partial struct EnemySpawnerSystem : ISystem
 
                 ecb.Playback(_entityManager);
                 ecb.Dispose();
+
+            }
                 int desiredEnemiesPerWave = _enemySpawnerComponent.NumOfEnemiesToSpawnPerSecond + _enemySpawnerComponent.NumOfEnemiesToSpawnIncrementAmount;
                 int enemiesPerWave = math.min(desiredEnemiesPerWave, _enemySpawnerComponent.MaxNumOfEnemiesToSpawnPerSecond);
-                _enemySpawnerComponent.NumOfEnemiesToSpawnPerSecond = enemiesPerWave;
 
+                _enemySpawnerComponent.NumOfEnemiesToSpawnPerSecond = enemiesPerWave;
                 _enemySpawnerComponent.CurrenTimeBeforeNextSpawn = _enemySpawnerComponent.TimeBeforeNextSpawn;
-            }
         }
         _entityManager.SetComponentData(_enemySpawnerEntity, _enemySpawnerComponent);
     }

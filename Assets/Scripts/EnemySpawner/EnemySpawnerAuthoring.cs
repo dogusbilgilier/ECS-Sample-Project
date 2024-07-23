@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class EnemySpawnerAuthoring : MonoBehaviour
 {
+    [Header("Referneces - Assets")]
     public GameObject EnemyPrefab;
-    
+    [Space()]
+    [Header("Spawn Options")]
     public int NumOfEnemiesToSpawnPerSecond;
     public int NumOfEnemiesToSpawnIncrementAmount;
     public int MaxNumOfEnemiesToSpawnPerSecond;
-    public float TimeBeforeNextSpawn;
 
+    public float TimeBeforeNextSpawn;
     public float EnemySpawnRadius;
     public float MinDistanceFromPlayer;
     public float EnemyHealth;
@@ -26,14 +28,16 @@ public class EnemySpawnerAuthoring : MonoBehaviour
 
             AddComponent(enemySpawnerEntity, new EnemySpawnerComponent()
             {
-                EnemySpeed = authoring.EnemySpeed,
-                EnemyHealth = authoring.EnemyHealth,
                 EnemyPrefab = GetEntity(authoring.EnemyPrefab, TransformUsageFlags.Dynamic),
+
                 NumOfEnemiesToSpawnPerSecond = authoring.NumOfEnemiesToSpawnPerSecond,
                 NumOfEnemiesToSpawnIncrementAmount = authoring.NumOfEnemiesToSpawnIncrementAmount,
                 MaxNumOfEnemiesToSpawnPerSecond = authoring.MaxNumOfEnemiesToSpawnPerSecond,
-                EnemySpawnRadius = authoring.EnemySpawnRadius,
                 MinDistanceFromPlayer = authoring.MinDistanceFromPlayer,
+
+                EnemySpeed = authoring.EnemySpeed,
+                EnemyHealth = authoring.EnemyHealth,
+                EnemySpawnRadius = authoring.EnemySpawnRadius,
                 TimeBeforeNextSpawn = authoring.TimeBeforeNextSpawn
             });
         }
