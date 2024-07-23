@@ -172,7 +172,7 @@ MonoBehaviour:
     type: 3}
   MoveSpeed: 10
   SpawnBulletInterval: 0
-  BulletSpeed: 1
+  BulletSpeed: 20
   BulletLifeTime: 20
   BulletDamage: 100
 --- !u!1 &1371797931
